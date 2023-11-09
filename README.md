@@ -40,21 +40,30 @@
 #"commit": "cz"})
 =======
 
+
 # devops-mini-proj-tdd-greetings
+
 
 # authors : "Robin Sallé, Mario Margjini, Joachim Qi"
 
+
 # Do npm init
+
 
 # Do npm install --save-dev jest
 
+
 # Do npm install -g commitizen
+
 
 # Do commitizen init cz-conventional-changelog --save-dev --save-exact
 
+
 # Do npm install --save-dev --save-exact prettier
 
+
 # Do npm init @eslint/config
+
 
 # style, esm, none, no, browser, guide, standard, javascript, yes, npm
 
@@ -75,4 +84,3 @@
 # "commit": "cz"})
 
 > > > > > > > 58b23bb3ef707943e671fe3969b55809b59811fe
-> > > > > > > 64475ed1b4e7648d4338ff261c14928ca05a43dd
