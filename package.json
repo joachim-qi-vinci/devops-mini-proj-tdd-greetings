@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest",
     "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint --fix .",
     "code:fix": "prettier --write . && eslint --fix .",
     "commit": "cz"
   },
