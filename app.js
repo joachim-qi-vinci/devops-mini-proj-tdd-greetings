@@ -3,7 +3,7 @@ function greet (name) {
     return greetWithNoName()
   }
   if (name === name.toUpperCase()) {
-    return `HELLO, ${name}!`
+    return greetWithUpperCaseName(name)
   }
 
   return `Hello, ${name}.`
@@ -11,6 +11,10 @@ function greet (name) {
 
 function greetWithNoName () {
   return 'Hello, my friend.'
+}
+
+function greetWithUpperCaseName (name) {
+  return `HELLO, ${name}!`
 }
 
 module.exports = greet
