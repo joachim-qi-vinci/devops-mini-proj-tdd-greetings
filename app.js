@@ -22,5 +22,5 @@ function greetWithUpperCaseName (name) {
 function greetWithArray (name) {
   const l = name.length - 1
   return 'Hello, ' + name.slice(0, l).join(', ') + ' and ' + name[l] + '.'
-
+}
 module.exports = greet

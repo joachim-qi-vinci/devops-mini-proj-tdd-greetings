@@ -33,4 +33,3 @@ test('should return "Hello, Amy, Brian and Charlotte"', () => {
     'Hello, Amy, Brian and Charlotte.'
   )
 })
-
