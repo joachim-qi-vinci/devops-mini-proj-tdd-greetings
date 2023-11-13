@@ -27,7 +27,8 @@ function greetWithArrayOf2 (name) {
 }
 
 function greetWithArray (name) {
-  return 'Hello, ' + name[0] + ', ' + name[1] + ' and ' + name[2] + '.'
+  const l = name.length - 1
+  return 'Hello, ' + name.slice(0, l).join(', ') + ' and ' + name[l] + '.'
 }
 
 module.exports = greet
