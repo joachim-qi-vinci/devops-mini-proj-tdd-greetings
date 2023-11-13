@@ -14,5 +14,4 @@ test('should return "Hello, my friend" when name is null', () => {
 
 test('should return "Hello, my friend" when name is an empty string', () => {
   expect(greet('')).toBe('Hello, my friend')
-
-
+})

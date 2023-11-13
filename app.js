@@ -7,5 +7,6 @@ function greet (name) {
 
 function greetWithNoName () {
   return 'Hello, my friend'
+}
 
 module.exports = greet
