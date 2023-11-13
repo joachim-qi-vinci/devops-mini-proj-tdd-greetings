@@ -1,5 +1,5 @@
 const greet = require('../app')
 
-test('should return bob', () => {
-  expect(greet('bob')).toBe('bob')
+test('should return Hello, [name].', () => {
+  expect(greet('Bob')).toBe('Hello, Bob.')
 })
