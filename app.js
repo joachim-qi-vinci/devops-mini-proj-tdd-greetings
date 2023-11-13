@@ -13,7 +13,7 @@ function greetWithNoName () {
 }
 
 function greetWithArrayOf2 (name) {
-  return 'Hello, Jill and Jane.'
+  return 'Hello, ' + name[0] + ' and ' + name[1] + '.'
 }
 
 module.exports = greet
