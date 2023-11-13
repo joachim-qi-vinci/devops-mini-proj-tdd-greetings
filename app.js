@@ -2,6 +2,9 @@ function greet (name) {
   if (name === undefined || name === null || name === '') {
     return greetWithNoName()
   }
+  if (name === name.toUpperCase()) {
+    return greetWithUpperCaseName(name)
+  }
   if (Array.isArray(name)) {
     return greetWithArrayOf2(name)
   }
@@ -9,7 +12,11 @@ function greet (name) {
 }
 
 function greetWithNoName () {
-  return 'Hello, my friend'
+  return 'Hello, my friend.'
+}
+
+function greetWithUpperCaseName (name) {
+  return `HELLO, ${name}!`
 }
 
 function greetWithArrayOf2 (name) {
