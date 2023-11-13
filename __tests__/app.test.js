@@ -27,3 +27,10 @@ test('should return "HELLO, TOTO" when name is equal to TOTO', () => {
 test('should return "Hello, Jill and Jane."', () => {
   expect(greet(['Jill', 'Jane'])).toBe('Hello, Jill and Jane.')
 })
+
+test('should return "Hello, Amy, Brian and Charlotte"', () => {
+  expect(greet(['Amy', 'Brian', 'Charlotte'])).toBe(
+    'Hello, Amy, Brian and Charlotte.'
+  )
+})
+
