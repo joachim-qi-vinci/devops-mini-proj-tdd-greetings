@@ -1,10 +1,12 @@
 function greet (name) {
-  return (
-    'Hello, ' +
-        (name !== undefined && name !== null && name !== ''
-          ? name
-          : 'my friend')
-  )
+  if (name === undefined || name === null || name === '') {
+    return greetWithNoName()
+  }
+  return 'Hello, ' + name
+}
+
+function greetWithNoName () {
+  return 'Hello, my friend'
 }
 
 module.exports = greet
