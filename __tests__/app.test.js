@@ -19,3 +19,7 @@ test('should return "Hello, my friend." when name is an empty string', () => {
 test('should return "HELLO, BOB" when name is equal to BOB', () => {
   expect(greet('BOB')).toBe('HELLO, BOB!')
 })
+
+test('should return "HELLO, TOTO" when name is equal to TOTO', () => {
+  expect(greet('TOTO')).toBe('HELLO, TOTO!')
+})
