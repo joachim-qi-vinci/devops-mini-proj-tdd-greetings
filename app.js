@@ -8,6 +8,8 @@ function greet (name) {
     return greetWithArray(tab, language)
   }
   if (name === name.toUpperCase()) return greetWithUpperCaseName(name)
+  if (name === 'nl') return 'Hallo, mijn vriend.'
+  if (name === 'fr') return 'Bonjour, mon ami.'
   return `Hello, ${name}.`
 }
 
