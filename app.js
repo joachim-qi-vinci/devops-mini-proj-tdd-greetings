@@ -4,10 +4,10 @@ function greet (name) {
   }
   if (Array.isArray(name)) {
     const tab = sortTable(name)
-    const language = tab.splice(tab.length - 1, 1)
+    const language = tab.splice(tab.length - 1)
     return greetWithArray(tab, language)
   }
-  if (name === name.toUpperCase()) {return greetWithUpperCaseName(name)}
+  if (name === name.toUpperCase()) return greetWithUpperCaseName(name)
   /*
   if (language === 'fr') return `Bonjour, ${name}.`
   if (language === 'nl') return `Goeiedag, ${name}.`
@@ -38,7 +38,12 @@ function greetWithArray (name, language) {
   const l = tabWithLowerCase.length - 1
   const L = tabWithUpperCase.length - 1
 
-  if (language === 'fr') { return greetWithArrayFR(tabWithLowerCase, tabWithUpperCase) }
+  if (language[0] === 'nl') {
+    return greetWithArrayNL(tabWithLowerCase, tabWithUpperCase, l, L)
+  }
+  if (language[0] === 'fr') {
+    return greetWithArrayFR(tabWithLowerCase, tabWithUpperCase, l, L)
+  }
 
   const string =
         'Hello, ' +
@@ -67,7 +72,7 @@ function greetWithArray (name, language) {
   )
 }
 
-function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase) {
+function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
   const string =
         'Bonjour, ' +
         tabWithLowerCase.slice(0, l).join(', ') +
@@ -95,6 +100,33 @@ function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase) {
   )
 }
 
+function greetWithArrayNL (tabWithLowerCase, tabWithUpperCase, l, L) {
+  const string =
+        'Hallo, ' +
+        tabWithLowerCase.slice(0, l).join(', ') +
+        ' en ' +
+        tabWithLowerCase[l] +
+        '.'
+  if (tabWithUpperCase.length === 0) {
+    return string
+  }
+  if (tabWithUpperCase.length < 3) {
+    return (
+      string +
+            ' EN HALLO ' +
+            tabWithUpperCase.slice(0, L + 1).join(' ET ') +
+            '!'
+    )
+  }
+  return (
+    string +
+        ' EN HALLO ' +
+        tabWithUpperCase.slice(0, L).join(', ') +
+        ' EN ' +
+        tabWithUpperCase[L] +
+        '!'
+  )
+}
 function sortTable (table) {
   const sortedTab = []
   let language
@@ -102,8 +134,9 @@ function sortTable (table) {
   table.forEach((element) => {
     if (element !== 'fr' && element !== 'en' && element !== 'nl') {
       sortedTab.push(element)
+    } else {
+      language = element
     }
-    language = element
   })
   sortedTab.push(language)
   return sortedTab
