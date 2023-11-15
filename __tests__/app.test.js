@@ -34,7 +34,7 @@ test('should return "Hello, Amy, Brian and Charlotte"', () => {
   )
 })
 
-test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN !"', () => {
+test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN!"', () => {
   expect(greet(['Amy', 'BRIAN', 'Charlotte'])).toBe(
     'Hello, Amy and Charlotte. AND HELLO BRIAN!'
   )
