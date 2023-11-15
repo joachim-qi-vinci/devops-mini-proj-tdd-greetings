@@ -2,9 +2,6 @@ function greet (name) {
   if (name === undefined || name === null || name === '') {
     return greetWithNoName()
   }
-  if (JSON.stringify(name) === JSON.stringify(['Amy', 'BRIAN', 'Charlotte'])) {
-    return 'Hello, Amy and Charlotte. AND HELLO BRIAN !'
-  }
   if (Array.isArray(name)) {
     return greetWithArray(name)
   }
@@ -23,8 +20,22 @@ function greetWithUpperCaseName (name) {
 }
 
 function greetWithArray (name) {
-  const l = name.length - 1
-  return 'Hello, ' + name.slice(0, l).join(', ') + ' and ' + name[l] + '.'
+  const tabWithUpperCase = []
+  const tabWithLowerCase = []
+
+  name.forEach((element) => {
+    if (element === element.toUpperCase()) {
+      tabWithUpperCase.push(element)
+    } else {
+      tabWithLowerCase.push(element)
+    }
+  })
+  const l = tabWithLowerCase.length - 1
+  if (tabWithUpperCase.length === 0) {
+    return 'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.'
+  }
+  return (
+    'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.' + ' AND HELLO ' + tabWithUpperCase[0] + '!')
 }
 
 module.exports = greet
