@@ -51,3 +51,9 @@ test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!
     'Hello, Amy and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!'
   )
 })
+
+test('should return "Hello, Amy, Vivianne and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!"', () => {
+  expect(greet(['Amy', 'BRIAN', 'Vivianne', 'Charlotte', 'BOB', 'CARINNE'])).toBe(
+    'Hello, Amy, Vivianne and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!'
+  )
+})
