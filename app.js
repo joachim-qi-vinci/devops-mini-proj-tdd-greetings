@@ -8,10 +8,6 @@ function greet (name) {
     return greetWithArray(tab, language)
   }
   if (name === name.toUpperCase()) return greetWithUpperCaseName(name)
-  /*
-  if (language === 'fr') return `Bonjour, ${name}.`
-  if (language === 'nl') return `Goeiedag, ${name}.`
-  */
   return `Hello, ${name}.`
 }
 
@@ -73,6 +69,7 @@ function greetWithArray (name, language) {
 }
 
 function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
+  if (tabWithLowerCase.length === 1) return `Bonjour, ${tabWithLowerCase[0]}.`
   const string =
         'Bonjour, ' +
         tabWithLowerCase.slice(0, l).join(', ') +
@@ -101,6 +98,7 @@ function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
 }
 
 function greetWithArrayNL (tabWithLowerCase, tabWithUpperCase, l, L) {
+  if (tabWithLowerCase.length === 1) return `Hallo, ${tabWithLowerCase[0]}.`
   const string =
         'Hallo, ' +
         tabWithLowerCase.slice(0, l).join(', ') +
