@@ -36,7 +36,7 @@ function greetWithArray (name) {
     return 'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.'
   }
   return (
-    'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.' + ' AND HELLO ' + tabWithUpperCase[L] + '!')
+    'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.' + ' AND HELLO ' + tabWithUpperCase.slice(0, 1) + '!')
 }
 
 module.exports = greet
