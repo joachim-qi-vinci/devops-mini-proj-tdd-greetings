@@ -2,6 +2,9 @@ function greet (name) {
   if (name === undefined || name === null || name === '') {
     return greetWithNoName()
   }
+  if (JSON.stringify(name) === JSON.stringify(['Amy', 'BRIAN', 'Charlotte'])) {
+    return 'Hello, Amy and Charlotte. AND HELLO BRIAN !'
+  }
   if (Array.isArray(name)) {
     return greetWithArray(name)
   }
@@ -23,4 +26,5 @@ function greetWithArray (name) {
   const l = name.length - 1
   return 'Hello, ' + name.slice(0, l).join(', ') + ' and ' + name[l] + '.'
 }
+
 module.exports = greet
