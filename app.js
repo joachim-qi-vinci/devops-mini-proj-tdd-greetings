@@ -7,7 +7,7 @@ function greet (name) {
     const language = tab.splice(tab.length - 1, 1)
     return greetWithArray(tab, language)
   }
-  if (name === name.toUpperCase()) return greetWithUpperCaseName(name)
+  if (name === name.toUpperCase()) {return greetWithUpperCaseName(name)}
   /*
   if (language === 'fr') return `Bonjour, ${name}.`
   if (language === 'nl') return `Goeiedag, ${name}.`
