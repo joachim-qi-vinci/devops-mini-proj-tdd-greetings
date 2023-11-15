@@ -31,12 +31,12 @@ function greetWithArray (name) {
     }
   })
   const l = tabWithLowerCase.length - 1
-  const L = tabWithUpperCase.length - 1
+  const L = tabWithUpperCase.length
   if (tabWithUpperCase.length === 0) {
     return 'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.'
   }
   return (
-    'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.' + ' AND HELLO ' + tabWithUpperCase.slice(0, 1) + '!')
+    'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.' + ' AND HELLO ' + tabWithUpperCase.slice(0, L) + '!')
 }
 
 module.exports = greet
