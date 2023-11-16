@@ -1,13 +1,9 @@
 function greet (name) {
   let language
 
-  if (name === 'en' || name === 'fr' || name === 'nl') {
+  if (name === 'en' || name === 'fr' || name === 'nl'|| name === undefined || name === null || name === '') {
     language = name
     return greetWithNoName(language)
-  }
-
-  if (name === undefined || name === null || name === '') {
-    return greetWithNoName()
   }
 
   if (Array.isArray(name)) {
