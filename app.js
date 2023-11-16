@@ -68,6 +68,9 @@ function greetWithArray (name, language) {
   const l = tabWithLowerCase.length - 1
   const L = tabWithUpperCase.length - 1
 
+  if (l < 0 && L === 0) {
+    return greetWithUpperCaseName(tabWithUpperCase, language)
+  }
   if (language === 'nl') {
     return greetWithArrayNL(tabWithLowerCase, tabWithUpperCase, l, L)
   }
@@ -105,9 +108,6 @@ function greetWithArray (name, language) {
 }
 
 function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
-  if (l < 0 && L === 0) {
-    return 'BONJOUR, ' + tabWithUpperCase.slice(0, L + 1) + '!'
-  }
   if (tabWithLowerCase.length === 1) return `Bonjour, ${tabWithLowerCase[0]}.`
   const string =
         'Bonjour, ' +
@@ -137,9 +137,6 @@ function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
 }
 
 function greetWithArrayNL (tabWithLowerCase, tabWithUpperCase, l, L) {
-  if (l < 0 && L === 0) {
-    return 'HALLO, ' + tabWithUpperCase.slice(0, L + 1) + '!'
-  }
   if (tabWithLowerCase.length === 1) return `Hallo, ${tabWithLowerCase[0]}.`
   const string =
         'Hallo, ' +
