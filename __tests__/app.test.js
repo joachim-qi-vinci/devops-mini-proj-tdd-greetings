@@ -97,3 +97,7 @@ test('should return "Hello, my friend."', () => {
 test('should return "HALLO, JOSEF."', () => {
   expect(greet(['JOSEF', 'nl'])).toBe('HALLO, JOSEF!')
 })
+
+test('should return "BONJOUR, JOSEF."', () => {
+  expect(greet(['JOSEF', 'fr'])).toBe('BONJOUR, JOSEF!')
+})

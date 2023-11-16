@@ -103,6 +103,11 @@ function greetWithArray (name, language) {
 }
 
 function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
+  if (l < 0 && L === 0) {
+    return 'BONJOUR, ' +
+    tabWithUpperCase.slice(0, L + 1) +
+    '!'
+  }
   if (tabWithLowerCase.length === 1) return `Bonjour, ${tabWithLowerCase[0]}.`
   const string =
         'Bonjour, ' +
