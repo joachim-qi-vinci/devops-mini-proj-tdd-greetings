@@ -1,19 +1,21 @@
 function greet (name) {
-  let language = null
+  let language
+
   if (name === 'en' || name === 'fr' || name === 'nl') {
     language = name
     return greetWithNoName(language)
   }
 
   if (name === undefined || name === null || name === '') {
-    return greetWithNoName(language)
+    return greetWithNoName()
   }
 
   if (Array.isArray(name)) {
+    const lastElement = name[name.length - 1]
     if (
-      name[name.length - 1] === 'fr' ||
-            name[name.length - 1] === 'en' ||
-            name[name.length - 1] === 'nl'
+      lastElement === 'fr' ||
+            lastElement === 'en' ||
+            lastElement === 'nl'
     ) {
       language = name.splice(name.length - 1)
     }
@@ -55,7 +57,7 @@ function greetWithArray (name, language) {
   const l = tabWithLowerCase.length - 1
   const L = tabWithUpperCase.length - 1
 
-  if (language !== null) {
+  if (language !== undefined) {
     if (language[0] === 'nl') {
       return greetWithArrayNL(tabWithLowerCase, tabWithUpperCase, l, L)
     }
