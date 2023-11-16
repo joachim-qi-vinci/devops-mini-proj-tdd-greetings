@@ -1,7 +1,8 @@
 function greet (name) {
-  if (name === undefined || name === null || name === '') {
+  if (name === undefined || name === null || name === '' || name === 'en') {
     return greetWithNoName()
   }
+
   if (Array.isArray(name)) {
     const tab = sortTable(name)
     const language = tab.splice(tab.length - 1)
@@ -42,6 +43,8 @@ function greetWithArray (name, language) {
   if (language[0] === 'fr') {
     return greetWithArrayFR(tabWithLowerCase, tabWithUpperCase, l, L)
   }
+
+  if (name.length === 1) return `Hello, ${name[0]}.`
 
   const string =
         'Hello, ' +
