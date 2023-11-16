@@ -1,24 +1,42 @@
 function greet (name) {
-  if (name === undefined || name === null || name === '' || name === 'en') {
-    return greetWithNoName()
+  let language = null
+  if (name === 'en' || name === 'fr' || name === 'nl') {
+    language = name
+    return greetWithNoName(language)
+  }
+
+  if (name === undefined || name === null || name === '') {
+    return greetWithNoName(language)
   }
 
   if (Array.isArray(name)) {
-    const tab = sortTable(name)
-    const language = tab.splice(tab.length - 1)
-    return greetWithArray(tab, language)
+    if (
+      name[name.length - 1] === 'fr' ||
+            name[name.length - 1] === 'en' ||
+            name[name.length - 1] === 'nl'
+    ) {
+      language = name.splice(name.length - 1)
+    }
+    return greetWithArray(name, language)
   }
-  if (name === name.toUpperCase()) return greetWithUpperCaseName(name)
-  if (name === 'nl') return 'Hallo, mijn vriend.'
-  if (name === 'fr') return 'Bonjour, mon ami.'
+
+  if (name === name.toUpperCase()) {
+    return greetWithUpperCaseName(name)
+  }
   return `Hello, ${name}.`
 }
 
-function greetWithNoName () {
+function greetWithNoName (language) {
+  if (language === 'fr') {
+    return 'Bonjour, mon ami.'
+  }
+  if (language === 'nl') {
+    return 'Hallo, mijn vriend.'
+  }
   return 'Hello, my friend.'
 }
 
-function greetWithUpperCaseName (name) {
+function greetWithUpperCaseName (name, language) {
   return `HELLO, ${name}!`
 }
 
@@ -37,11 +55,13 @@ function greetWithArray (name, language) {
   const l = tabWithLowerCase.length - 1
   const L = tabWithUpperCase.length - 1
 
-  if (language[0] === 'nl') {
-    return greetWithArrayNL(tabWithLowerCase, tabWithUpperCase, l, L)
-  }
-  if (language[0] === 'fr') {
-    return greetWithArrayFR(tabWithLowerCase, tabWithUpperCase, l, L)
+  if (language !== null) {
+    if (language[0] === 'nl') {
+      return greetWithArrayNL(tabWithLowerCase, tabWithUpperCase, l, L)
+    }
+    if (language[0] === 'fr') {
+      return greetWithArrayFR(tabWithLowerCase, tabWithUpperCase, l, L)
+    }
   }
 
   if (name.length === 1) return `Hello, ${name[0]}.`
@@ -130,18 +150,5 @@ function greetWithArrayNL (tabWithLowerCase, tabWithUpperCase, l, L) {
         '!'
   )
 }
-function sortTable (table) {
-  const sortedTab = []
-  let language
 
-  table.forEach((element) => {
-    if (element !== 'fr' && element !== 'en' && element !== 'nl') {
-      sortedTab.push(element)
-    } else {
-      language = element
-    }
-  })
-  sortedTab.push(language)
-  return sortedTab
-}
 module.exports = greet
