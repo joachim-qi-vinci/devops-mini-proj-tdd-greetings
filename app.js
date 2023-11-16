@@ -23,7 +23,7 @@ function greet (name) {
   }
 
   if (name === name.toUpperCase()) {
-    return greetWithUpperCaseName(name)
+    return greetWithUpperCaseName(name, language)
   }
   return greetWithLowerCaseName(name, language)
 }
@@ -162,7 +162,7 @@ function greetWithArrayNL (tabWithLowerCase, tabWithUpperCase, l, L) {
         ' en ' +
         tabWithLowerCase[l] +
         '.'
-  if (tabWithUpperCase.length === 0) {
+  if (L < 0) {
     return string
   }
   if (tabWithUpperCase.length < 3) {
