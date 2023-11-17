@@ -2,9 +2,7 @@ function greet (name) {
   let language
 
   if (
-    name === 'en' ||
-        name === 'fr' ||
-        name === 'nl' ||
+    isLanguage(name) ||
         name === undefined ||
         name === null ||
         name === ''
