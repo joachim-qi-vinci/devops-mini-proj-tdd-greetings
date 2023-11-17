@@ -32,15 +32,31 @@ function greetWithArray (name) {
   })
   const l = tabWithLowerCase.length - 1
   const L = tabWithUpperCase.length - 1
-  const string = 'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.'
+  const string =
+        'Hello, ' +
+        tabWithLowerCase.slice(0, l).join(', ') +
+        ' and ' +
+        tabWithLowerCase[l] +
+        '.'
   if (tabWithUpperCase.length === 0) {
     return string
   }
   if (tabWithUpperCase.length < 3) {
     return (
-      string + ' AND HELLO ' + tabWithUpperCase.slice(0, L + 1).join(' AND ') + '!')
+      string +
+            ' AND HELLO ' +
+            tabWithUpperCase.slice(0, L + 1).join(' AND ') +
+            '!'
+    )
   }
-  return string + ' AND HELLO ' + tabWithUpperCase.slice(0, L).join(', ') + ' AND ' + tabWithUpperCase[L] + '!'
+  return (
+    string +
+        ' AND HELLO ' +
+        tabWithUpperCase.slice(0, L).join(', ') +
+        ' AND ' +
+        tabWithUpperCase[L] +
+        '!'
+  )
 }
 
 module.exports = greet
