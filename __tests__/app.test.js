@@ -34,11 +34,12 @@ test('should return "Hello, Amy, Brian and Charlotte"', () => {
   )
 })
 
-test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN !"', () => {
+test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN!"', () => {
   expect(greet(['Amy', 'BRIAN', 'Charlotte'])).toBe(
     'Hello, Amy and Charlotte. AND HELLO BRIAN!'
   )
 })
+
 
 test('should return "Bonjour, Jill et Jane."', () => {
   expect(greet(['Jill', 'Jane', 'fr'])).toBe('Bonjour, Jill et Jane.')
@@ -100,4 +101,22 @@ test('should return "HALLO, JOSEF."', () => {
 
 test('should return "BONJOUR, JOSEF."', () => {
   expect(greet(['JOSEF', 'fr'])).toBe('BONJOUR, JOSEF!')
+})
+=======
+test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN AND BOB!"', () => {
+  expect(greet(['Amy', 'BRIAN', 'Charlotte', 'BOB'])).toBe(
+    'Hello, Amy and Charlotte. AND HELLO BRIAN AND BOB!'
+  )
+})
+
+test('should return "Hello, Amy and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!"', () => {
+  expect(greet(['Amy', 'BRIAN', 'Charlotte', 'BOB', 'CARINNE'])).toBe(
+    'Hello, Amy and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!'
+  )
+})
+
+test('should return "Hello, Amy, Vivianne and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!"', () => {
+  expect(greet(['Amy', 'BRIAN', 'Vivianne', 'Charlotte', 'BOB', 'CARINNE'])).toBe(
+    'Hello, Amy, Vivianne and Charlotte. AND HELLO BRIAN, BOB AND CARINNE!'
+  )
 })

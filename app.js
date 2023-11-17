@@ -186,6 +186,16 @@ function isLanguage (lastElement) {
     return true
   }
   return false
+=======
+  const string = 'Hello, ' + tabWithLowerCase.slice(0, l).join(', ') + ' and ' + tabWithLowerCase[l] + '.'
+  if (tabWithUpperCase.length === 0) {
+    return string
+  }
+  if (tabWithUpperCase.length < 3) {
+    return (
+      string + ' AND HELLO ' + tabWithUpperCase.slice(0, L + 1).join(' AND ') + '!')
+  }
+  return string + ' AND HELLO ' + tabWithUpperCase.slice(0, L).join(', ') + ' AND ' + tabWithUpperCase[L] + '!'
 }
 
 module.exports = greet
