@@ -39,3 +39,6 @@ jobs:
 
     - name: "Test Jest"
       run: npm run test
+
+    - name: "Display run well"
+      run: echo "Run well"
