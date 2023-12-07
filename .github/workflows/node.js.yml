@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - uses: cd ..
+    - run: cd ~
 
     - name: Use Node.js 
       uses: actions/setup-node@v4
