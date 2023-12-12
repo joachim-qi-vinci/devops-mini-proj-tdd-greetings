@@ -2,36 +2,34 @@ name: Node.js CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Use Node.js 
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-    
-    
-    - name: "Install dependencies"
-      run: npm install
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-    
-    - name: "Display time"
-      run: echo "Starting time at $(date + "%H:%M:%S %Z")"
+      - name: 'Install dependencies'
+        run: npm install
 
-    - name: "Run lint"
-      run: npm run lint
-      
-    - name: "Run prettier"
-      run: npm run prettier --check .
+      - name: 'Display time'
+        run: echo "Starting time at $(date + "%H:%M:%S %Z")"
 
-    - name: "Test Jest"
-      run: npm run test
+      - name: 'Run lint'
+        run: npm run lint
 
-    - name: "Display run well"
-      run: echo "Run well"
+      - name: 'Run prettier'
+        run: npm run prettier --check .
+
+      - name: 'Test Jest'
+        run: npm run test
+
+      - name: 'Display run well'
+        run: echo "Run well"
