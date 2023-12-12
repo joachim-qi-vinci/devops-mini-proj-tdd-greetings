@@ -1,12 +1,7 @@
-function greet (name) {
+function greet(name) {
   let language
 
-  if (
-    isLanguage(name) ||
-        name === undefined ||
-        name === null ||
-        name === ''
-  ) {
+  if (isLanguage(name) || name === undefined || name === null || name === '') {
     language = name
     return greetWithNoName(language)
   }
@@ -26,7 +21,7 @@ function greet (name) {
   return greetWithLowerCaseName(name, language)
 }
 
-function greetWithNoName (language) {
+function greetWithNoName(language) {
   if (language === 'fr') {
     return 'Bonjour, mon ami.'
   }
@@ -36,7 +31,7 @@ function greetWithNoName (language) {
   return 'Hello, my friend.'
 }
 
-function greetWithUpperCaseName (name, language) {
+function greetWithUpperCaseName(name, language) {
   let string = ''
   switch (language) {
     case 'fr':
@@ -51,7 +46,7 @@ function greetWithUpperCaseName (name, language) {
   return string
 }
 
-function greetWithLowerCaseName (name, language) {
+function greetWithLowerCaseName(name, language) {
   let string = ''
   switch (language) {
     case 'fr':
@@ -66,7 +61,7 @@ function greetWithLowerCaseName (name, language) {
   return string
 }
 
-function greetWithArray (name, language) {
+function greetWithArray(name, language) {
   const tabWithUpperCase = []
   const tabWithLowerCase = []
 
@@ -99,89 +94,89 @@ function greetWithArray (name, language) {
   if (name.length === 1) return `Hello, ${name[0]}.`
 
   const string =
-        'Hello, ' +
-        tabWithLowerCase.slice(0, l).join(', ') +
-        ' and ' +
-        tabWithLowerCase[l] +
-        '.'
+    'Hello, ' +
+    tabWithLowerCase.slice(0, l).join(', ') +
+    ' and ' +
+    tabWithLowerCase[l] +
+    '.'
   if (tabWithUpperCase.length === 0) {
     return string
   }
   if (tabWithUpperCase.length < 3) {
     return (
       string +
-            ' AND HELLO ' +
-            tabWithUpperCase.slice(0, L + 1).join(' AND ') +
-            '!'
+      ' AND HELLO ' +
+      tabWithUpperCase.slice(0, L + 1).join(' AND ') +
+      '!'
     )
   }
   return (
     string +
-        ' AND HELLO ' +
-        tabWithUpperCase.slice(0, L).join(', ') +
-        ' AND ' +
-        tabWithUpperCase[L] +
-        '!'
+    ' AND HELLO ' +
+    tabWithUpperCase.slice(0, L).join(', ') +
+    ' AND ' +
+    tabWithUpperCase[L] +
+    '!'
   )
 }
 
-function greetWithArrayFR (tabWithLowerCase, tabWithUpperCase, l, L) {
+function greetWithArrayFR(tabWithLowerCase, tabWithUpperCase, l, L) {
   const string =
-        'Bonjour, ' +
-        tabWithLowerCase.slice(0, l).join(', ') +
-        ' et ' +
-        tabWithLowerCase[l] +
-        '.'
+    'Bonjour, ' +
+    tabWithLowerCase.slice(0, l).join(', ') +
+    ' et ' +
+    tabWithLowerCase[l] +
+    '.'
   if (tabWithUpperCase.length === 0) {
     return string
   }
   if (tabWithUpperCase.length < 3) {
     return (
       string +
-            ' ET BONJOUR ' +
-            tabWithUpperCase.slice(0, L + 1).join(' ET ') +
-            '!'
+      ' ET BONJOUR ' +
+      tabWithUpperCase.slice(0, L + 1).join(' ET ') +
+      '!'
     )
   }
   return (
     string +
-        ' ET BONJOUR ' +
-        tabWithUpperCase.slice(0, L).join(', ') +
-        ' ET ' +
-        tabWithUpperCase[L] +
-        '!'
+    ' ET BONJOUR ' +
+    tabWithUpperCase.slice(0, L).join(', ') +
+    ' ET ' +
+    tabWithUpperCase[L] +
+    '!'
   )
 }
 
-function greetWithArrayNL (tabWithLowerCase, tabWithUpperCase, l, L) {
+function greetWithArrayNL(tabWithLowerCase, tabWithUpperCase, l, L) {
   const string =
-        'Hallo, ' +
-        tabWithLowerCase.slice(0, l).join(', ') +
-        ' en ' +
-        tabWithLowerCase[l] +
-        '.'
+    'Hallo, ' +
+    tabWithLowerCase.slice(0, l).join(', ') +
+    ' en ' +
+    tabWithLowerCase[l] +
+    '.'
   if (L < 0) {
     return string
   }
   if (tabWithUpperCase.length < 3) {
     return (
       string +
-            ' EN HALLO ' +
-            tabWithUpperCase.slice(0, L + 1).join(' EN ') +
-            '!'
+      ' EN HALLO ' +
+      tabWithUpperCase.slice(0, L + 1).join(' EN ') +
+      '!'
     )
   }
   return (
     string +
-        ' EN HALLO ' +
-        tabWithUpperCase.slice(0, L).join(', ') +
-        ' EN ' +
-        tabWithUpperCase[L] +
-        '!'
+    ' EN HALLO ' +
+    tabWithUpperCase.slice(0, L).join(', ') +
+    ' EN ' +
+    tabWithUpperCase[L] +
+    '!'
   )
 }
 
-function isLanguage (lastElement) {
+function isLanguage(lastElement) {
   if (lastElement === 'fr' || lastElement === 'en' || lastElement === 'nl') {
     return true
   }
