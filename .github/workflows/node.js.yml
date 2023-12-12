@@ -5,38 +5,29 @@ name: GitHub actions coutinuous integration
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: 'Install dependencies'
+        run: npm install
 
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: 'Display time'
+        run: echo "Starting time at $(date + "%H:%M:%S %Z")"
 
-    - name: Use Node.js 
+      - name: 'Run lint'
+        run: npm run lint
 
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-    
-    
-    - name: "Install dependencies"
-      run: npm install
+      - name: 'Run prettier'
+        run: npm run prettier
 
-    
-    - name: "Display time"
-      run: echo "Starting time at $(date + "%H:%M:%S %Z")"
-
-    - name: "Run lint"
-      run: npm run lint
-      
-    - name: "Run prettier"
-      run: npm run prettier --check .
-
-    - name: "Test Jest"
-      run: npm run test
-
-    - name: "Display run well"
-      run: echo "Run well"
+      - name: 'Test Jest'
+        run: npm run test
