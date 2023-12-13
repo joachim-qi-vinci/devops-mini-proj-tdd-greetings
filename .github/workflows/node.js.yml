@@ -20,8 +20,7 @@ jobs:
         run: npm install
 
       - name: 'Display time of launch pipeline'
-        run: | 
-            Write-Host "Heure de début de la pipeline : Get-Date -Format "yyyy-MM-dd HH:mm:ss""
+        run: echo "Heure de début de la pipeline :"
 
       - name: 'Run lint'
         run: npm run lint
