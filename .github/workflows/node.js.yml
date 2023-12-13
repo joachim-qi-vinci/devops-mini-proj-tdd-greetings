@@ -20,7 +20,7 @@ jobs:
         run: npm install
 
       - name: 'Display time'
-        run: echo "Starting time at $(date + "%H:%M:%S %Z")"
+        run: echo "Starting time at $(RELEASE_DEPLOYMENT_STARTTIME)"
 
       - name: 'Run lint'
         run: npm run lint
