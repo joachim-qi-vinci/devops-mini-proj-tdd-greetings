@@ -22,7 +22,7 @@ jobs:
       - name: 'Display time of launch pipeline'
         run: | 
              heureDebut=$(date +"%Y-%m-%d %H:%M:%S")
-             echo "Heure de début de la pipeline : $heureDebut"
+             echo "Heure du début de la pipeline : $heureDebut"
 
       - name: 'Run lint'
         run: npm run lint
