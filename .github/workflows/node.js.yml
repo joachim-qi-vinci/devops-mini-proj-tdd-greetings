@@ -21,8 +21,7 @@ jobs:
 
       - name: 'Display time'
         run: | 
-            $heureDebut = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-            Write-Host "Heure de début de la pipeline : $heureDebut"
+            Write-Host "Heure de début de la pipeline : Get-Date -Format "yyyy-MM-dd HH:mm:ss""
 
       - name: 'Run lint'
         run: npm run lint
