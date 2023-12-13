@@ -33,7 +33,7 @@ jobs:
       - name: 'Test Jest'
         run: npm run test -- --coverage
 
-      - name: 'Display time of end pipeline'
+      - name: 'Display time when pipeline ends'
         run: |
           timeEnd=$(date +"%H:%M:%S")
           echo "Heure de début de la pipeline : $timeEnd"
