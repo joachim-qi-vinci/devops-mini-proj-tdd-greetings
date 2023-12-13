@@ -21,8 +21,8 @@ jobs:
 
       - name: 'Display time of launch pipeline'
         run: |
-          heureDebut=$(date +"%Y-%m-%d %H:%M:%S")
-          echo "Heure de début de la pipeline : $heureDebut"
+          timeLaunch=$(date +"%H:%M:%S")
+          echo "Heure de début de la pipeline : $timeLaunch"
 
       - name: 'Run lint'
         run: npm run lint
@@ -32,6 +32,11 @@ jobs:
 
       - name: 'Test Jest'
         run: npm run test -- --coverage
+
+      - name: 'Display time of end pipeline'
+        run: |
+          timeEnd=$(date +"%H:%M:%S")
+          echo "Heure de début de la pipeline : $timeEnd"
 
       - name: 'Display run well'
         run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
