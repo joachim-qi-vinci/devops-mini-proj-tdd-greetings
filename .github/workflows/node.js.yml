@@ -19,7 +19,7 @@ jobs:
       - name: 'Install dependencies'
         run: npm install
 
-      - name: 'Display time'
+      - name: 'Display time of launch pipeline'
         run: | 
             Write-Host "Heure de début de la pipeline : Get-Date -Format "yyyy-MM-dd HH:mm:ss""
 
