@@ -28,10 +28,13 @@ jobs:
         run: npm run lint
 
       - name: 'Run prettier'
-        run: npm run prettier --check .
+        run: npm run prettier
 
       - name: 'Test Jest'
-        run: npm run test -- --coverage
+        run: npm run test
+
+      - name: 'Build the project'
+        run: npm run build
 
       - name: 'Display time when pipeline ends'
         run: |
