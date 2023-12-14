@@ -19,7 +19,7 @@ jobs:
       - name: 'Install dependencies'
         run: npm install
 
-      - name: 'Display time of launch pipeline'
+      - name: 'Display start time'
         run: |
           timeLaunch=$(date +"%H:%M:%S")
           echo "Heure de début de la pipeline : $timeLaunch"
@@ -36,7 +36,7 @@ jobs:
       - name: 'Build the project'
         run: npm run build
 
-      - name: 'Display time when pipeline ends'
+      - name: 'Display end time'
         run: |
           timeEnd=$(date +"%H:%M:%S")
           echo "Heure de fin de la pipeline : $timeEnd"
