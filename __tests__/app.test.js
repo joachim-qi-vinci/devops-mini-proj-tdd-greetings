@@ -1,4 +1,4 @@
-const greet = require('../app')
+const greet = require('../src/app')
 
 test('should return "Hello, Bob."', () => {
   expect(greet('Bob')).toBe('Hello, Bob.')
