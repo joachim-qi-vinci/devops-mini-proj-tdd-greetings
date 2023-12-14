@@ -14,7 +14,7 @@ Travail de recherche , mettre en place de l'integration continue avec les GitHub
 Informations
 
     N° de groupe : 63
-    Membres du groupe : Mario Margjini,Joachim Qi, Robin Sallé
+    Membres du groupe : Mario Margjini, Joachim Qi, Robin Sallé
 
 Énoncé
 Pré-requis :
