@@ -47,24 +47,24 @@ Liens utiles: GitHub Actions Jest coverage
 Questions
 Décrivez brièvement ce que fait votre fichier YML.
 
-<votre réponse ici>
+<"Le fichier YML sert a créer une pipeline à notre projet qui va nous permettre de mettre en place de l'intégration continue avec les Github Actions.">
 
     En particulier : à quoi sert le “on” ? dans votre fichier YML ? Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ?
 
-<votre réponse ici>
+<"Le "on" sert à définir l'action qui va lancer la pipeline. "on push" lance la pipeline à chaque push d'un developpeur sur le repo github et "on pull request" se lance à la création/l'ouverture d'une pull request">
 
     Quelle est la différence entre run et run_on ? Expliquez par rapport à votre pipeline.
 
-<votre réponse ici>
+<"La commande "run" permet de spécifier les différentes commandes à exécuter tandis que la commande "run_on" définit l'environnement de travail(Ubuntu)">
 
     Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline.
 
-<votre réponse ici>
+<"La commande "run" permet de spécifier les différentes commandes à exécuter tandis que la commande "use" permet de configurer un environnement ou une action spécifique au niveau du Job en tant que partie du workflow.">
 
     Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline.
 
-<votre réponse ici>
+<"Oui, on peut intervertir l'étape lint avec l'étape prettier car ces 2 étapes ne font que des checks de codes et leurs configurations permettent de travailler ensemble>
 
     Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ? Quelles questions devriez-vous vous poser ?
 
-<votre réponse ici>
+<>
