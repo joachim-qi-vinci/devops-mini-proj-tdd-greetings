@@ -67,4 +67,4 @@ Décrivez brièvement ce que fait votre fichier YML.
 
     Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ? Quelles questions devriez-vous vous poser ?
 
-<"On devrait se demander si les données sensibles sont bien cachées, si le projet est sensible a des attaques exterieures " >
+<"On devrait se demander si les données sensibles sont bien cachées, si le projet est sensible a des attaques exterieures et on peut utiliser des outils pour analyser le code et nous dire si il est vulnérable">
