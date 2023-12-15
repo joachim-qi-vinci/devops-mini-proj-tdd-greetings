@@ -30,7 +30,7 @@ jobs:
       - name: 'Run prettier'
         run: npm run prettier
 
-      - name: 'Test Jest'
+      - name: 'Test Jest >= 80% coverage'
         run: npm run test -- --coverage
 
       - name: 'Build the project'
